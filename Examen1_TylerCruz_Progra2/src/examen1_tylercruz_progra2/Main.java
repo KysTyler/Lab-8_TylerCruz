@@ -23,6 +23,10 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         initComponents();
+        HiloHora h=new HiloHora(jl_hora);
+        Thread proceso1 = new Thread(h);
+        proceso1.start(); 
+         
     }
 
     /**
@@ -114,17 +118,6 @@ public class Main extends javax.swing.JFrame {
         jLabel37 = new javax.swing.JLabel();
         label_Person_Sueldo = new javax.swing.JTextField();
         Button_Color = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
-        jPanel6 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        JTable_Person = new javax.swing.JTable();
-        RM_ComboBox_Contactos = new javax.swing.JComboBox<>();
-        RM_ComboBox_Articulos = new javax.swing.JComboBox<>();
-        jLabel38 = new javax.swing.JLabel();
-        jLabel39 = new javax.swing.JLabel();
-        RM_Button_Remove = new javax.swing.JButton();
-        RM_Button_Modificar = new javax.swing.JButton();
-        RM_Button_Remove1 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -137,6 +130,21 @@ public class Main extends javax.swing.JFrame {
         EM_Mensaje = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         Message_ProgressBar = new javax.swing.JProgressBar();
+        jl_hora = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        JTable_Person = new javax.swing.JTable();
+        RM_ComboBox_Contactos = new javax.swing.JComboBox<>();
+        RM_ComboBox_Articulos = new javax.swing.JComboBox<>();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        JTable_Articulos = new javax.swing.JTable();
+        RM_Button_RemovePerson = new javax.swing.JButton();
+        RM_Button_ModificarPersona = new javax.swing.JButton();
+        RM_Button_RemoveArticulo = new javax.swing.JButton();
+        JB_ModificarArticulo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -652,116 +660,6 @@ public class Main extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Create", jPanel2);
 
-        JTable_Person.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(JTable_Person);
-
-        RM_ComboBox_Contactos.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                RM_ComboBox_ContactosItemStateChanged(evt);
-            }
-        });
-        RM_ComboBox_Contactos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RM_ComboBox_ContactosActionPerformed(evt);
-            }
-        });
-
-        jLabel38.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel38.setText("Combox de Personas: ");
-
-        jLabel39.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel39.setText("Combox de Articulos: ");
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(RM_ComboBox_Contactos, javax.swing.GroupLayout.PREFERRED_SIZE, 449, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(RM_ComboBox_Articulos, javax.swing.GroupLayout.PREFERRED_SIZE, 449, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(190, Short.MAX_VALUE))
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1)
-                .addContainerGap())
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel38)
-                    .addComponent(jLabel39))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(RM_ComboBox_Contactos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(RM_ComboBox_Articulos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(53, Short.MAX_VALUE))
-        );
-
-        RM_Button_Remove.setText("Remove Persona");
-        RM_Button_Remove.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RM_Button_RemoveActionPerformed(evt);
-            }
-        });
-
-        RM_Button_Modificar.setText("Modificar");
-
-        RM_Button_Remove1.setText("Remove Articulo");
-        RM_Button_Remove1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RM_Button_Remove1ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(77, 77, 77)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(RM_Button_Remove1)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(RM_Button_Remove)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(RM_Button_Modificar)))
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(RM_Button_Remove)
-                    .addComponent(RM_Button_Modificar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(RM_Button_Remove1)
-                .addGap(0, 131, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("Remove and Modify", jPanel3);
-
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -778,7 +676,7 @@ public class Main extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Emisor", "Receptor", "Mensaje"
+                "Receptor", "Emisor", "Mensaje"
             }
         ));
         jScrollPane2.setViewportView(Table_EmuladorMensaje);
@@ -803,12 +701,8 @@ public class Main extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1139, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(54, 54, 54)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1)
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -818,12 +712,18 @@ public class Main extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(EM_Receptor, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(58, 58, 58)
-                                .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(44, 44, 44)
-                                .addComponent(EM_Mensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 491, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jButton1))
+                        .addGap(44, 44, 44)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jl_hora, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(EM_Mensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 491, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(Message_ProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Message_ProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1139, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -840,14 +740,166 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jLabel42)
                     .addComponent(EM_Mensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Message_ProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1)
+                    .addComponent(jl_hora))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(Message_ProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 209, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Emulador Mensaje", jPanel4);
+
+        JTable_Person.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Sexo", "Usuario", "Estado Civil"
+            }
+        ));
+        jScrollPane1.setViewportView(JTable_Person);
+
+        RM_ComboBox_Contactos.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                RM_ComboBox_ContactosItemStateChanged(evt);
+            }
+        });
+        RM_ComboBox_Contactos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RM_ComboBox_ContactosActionPerformed(evt);
+            }
+        });
+
+        RM_ComboBox_Articulos.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                RM_ComboBox_ArticulosItemStateChanged(evt);
+            }
+        });
+
+        jLabel38.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel38.setText("Combox de Personas: ");
+
+        jLabel39.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel39.setText("Combox de Articulos: ");
+
+        JTable_Articulos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Titulo", "Descripcion", "Editorial", "Puntuacion"
+            }
+        ));
+        jScrollPane3.setViewportView(JTable_Articulos);
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(RM_ComboBox_Contactos, javax.swing.GroupLayout.PREFERRED_SIZE, 449, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(35, 35, 35)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(RM_ComboBox_Articulos, javax.swing.GroupLayout.PREFERRED_SIZE, 449, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 184, Short.MAX_VALUE))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap())
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel38)
+                    .addComponent(jLabel39))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(RM_ComboBox_Contactos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(RM_ComboBox_Articulos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        RM_Button_RemovePerson.setText("Remove Persona");
+        RM_Button_RemovePerson.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RM_Button_RemovePersonActionPerformed(evt);
+            }
+        });
+
+        RM_Button_ModificarPersona.setText("Modificar Persona");
+        RM_Button_ModificarPersona.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RM_Button_ModificarPersonaActionPerformed(evt);
+            }
+        });
+
+        RM_Button_RemoveArticulo.setText("Remove Articulo");
+        RM_Button_RemoveArticulo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RM_Button_RemoveArticuloActionPerformed(evt);
+            }
+        });
+
+        JB_ModificarArticulo.setText("Modificar Articulo");
+        JB_ModificarArticulo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JB_ModificarArticuloActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(RM_Button_RemovePerson)
+                                .addGap(18, 18, 18)
+                                .addComponent(RM_Button_ModificarPersona))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(RM_Button_RemoveArticulo)
+                                .addGap(18, 18, 18)
+                                .addComponent(JB_ModificarArticulo)))
+                        .addGap(0, 0, Short.MAX_VALUE))))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(RM_Button_RemovePerson)
+                    .addComponent(RM_Button_ModificarPersona))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(RM_Button_RemoveArticulo)
+                    .addComponent(JB_ModificarArticulo))
+                .addContainerGap(14, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Remove and Modify", jPanel3);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -880,33 +932,38 @@ public class Main extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void RM_Button_Remove1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RM_Button_Remove1ActionPerformed
+    private void RM_Button_RemoveArticuloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RM_Button_RemoveArticuloActionPerformed
         // TODO add your handling code here:
+        DefaultTableModel modelo
+                        = (DefaultTableModel) this.JTable_Person.getModel();
         try {
-            if (RM_ComboBox_Articulos.getSelectedIndex() > -1) {
-                RM_ComboBox_Articulos.remove(RM_ComboBox_Articulos.getSelectedIndex());
-                RM_ComboBox_Articulos.getSelectedIndex();
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "No se pudo hacer");
-        }
-    }//GEN-LAST:event_RM_Button_Remove1ActionPerformed
-
-    private void RM_Button_RemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RM_Button_RemoveActionPerformed
-        // TODO add your handling code here:
-        //if (this.RM_ComboBox_Contactos.getSelectedItem >= 0) {
-        try {
-            if (RM_ComboBox_Contactos.getSelectedIndex() > -1) {
-                RM_ComboBox_Contactos.remove(RM_ComboBox_Contactos.getSelectedIndex());
-                RM_ComboBox_Contactos.getSelectedIndex();
+            if (this.JTable_Person.getSelectedRow() >= 0) {
+                this.JTable_Person.remove(this.JTable_Person.getSelectedRow());
             }
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "No se puedo Hacer");
         }
+        JTable_Person.setModel(modelo);
+    }//GEN-LAST:event_RM_Button_RemoveArticuloActionPerformed
+
+    private void RM_Button_RemovePersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RM_Button_RemovePersonActionPerformed
+        // TODO add your handling code here:
+        //if (this.RM_ComboBox_Contactos.getSelectedItem >= 0) {
+         DefaultTableModel modelo
+                        = (DefaultTableModel) this.JTable_Articulos.getModel();
+        try {
+            if (this.JTable_Articulos.getSelectedRow() >= 0) {
+                this.JTable_Articulos.remove(this.JTable_Articulos.getSelectedRow());
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "No se puedo Hacer");
+        }
+        JTable_Articulos.setModel(modelo);
         //this.RM_ComboBox_Contactos.setModel(modelo);
         //}
-    }//GEN-LAST:event_RM_Button_RemoveActionPerformed
+    }//GEN-LAST:event_RM_Button_RemovePersonActionPerformed
 
     private void RM_ComboBox_ContactosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RM_ComboBox_ContactosActionPerformed
         // TODO add your handling code here:
@@ -1203,23 +1260,74 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        Mensaje x = new Mensaje(this.EM_Emisor.getText(), this.EM_Receptor.getText(), this.EM_Mensaje.getText());
-        this.EM_Emisor.setText("");
-        this.EM_Receptor.setText("");
-        this.EM_Mensaje.setText("");
-        if (rootPaneCheckingEnabled) {
-            
-        mensajes.add(x);
-        Object[] newrow = {
-            x.getEmisor(),
-            x.getReceptor(),
-            x.getContenido(),};
-        DefaultTableModel modelo
-                = (DefaultTableModel) this.Table_EmuladorMensaje.getModel();
-        modelo.addRow(newrow);
-        this.Table_EmuladorMensaje.setModel(modelo);
-        }
+       String emisor  = this.EM_Emisor.getText(), receptor = this.EM_Receptor.getText(), msg = this.EM_Mensaje.getText();
+        String size  = EM_Mensaje.getText().toString();
+        int Actualsize  = size.length();
+        System.out.println(EM_Mensaje.getText().toString());
+        System.out.println("Size string: "  + Actualsize);
+        Message_ProgressBar.setMinimum(0);
+        Message_ProgressBar.setValue(0);
+        Message_ProgressBar.setMaximum(Actualsize);
+        mj =new HiloMensaje(Message_ProgressBar,Table_EmuladorMensaje,emisor,receptor,msg);
+        mj.start();
+//        Mensaje x = new Mensaje(this.EM_Emisor.getText(), this.EM_Receptor.getText(), this.EM_Mensaje.getText());
+//        this.EM_Emisor.setText("");
+//        this.EM_Receptor.setText("");
+//        this.EM_Mensaje.setText("");
+//        if (rootPaneCheckingEnabled) {
+//        mensajes.add(x);
+//        Object[] newrow = {
+//            x.getEmisor(),
+//            x.getReceptor(),
+//            x.getContenido(),};
+//        DefaultTableModel modelo
+//                = (DefaultTableModel) this.Table_EmuladorMensaje.getModel();
+//        modelo.addRow(newrow);
+//        this.Table_EmuladorMensaje.setModel(modelo);
+//        }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void RM_Button_ModificarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RM_Button_ModificarPersonaActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel modelo
+                = (DefaultTableModel) this.JTable_Person.getModel();
+        int row = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingrese la fila que deaseas cambiar!"));
+        int column = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingrese la columna que deaseas cambiar!"));
+        String data = JOptionPane.showInputDialog(null, "Ingrese el nuevo data");
+        modelo.setValueAt(data, row, column);
+        JTable_Person.setModel(modelo);
+    }//GEN-LAST:event_RM_Button_ModificarPersonaActionPerformed
+
+    private void JB_ModificarArticuloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_ModificarArticuloActionPerformed
+        // TODO add your handling code here:
+         DefaultTableModel modelo
+                = (DefaultTableModel) this.JTable_Articulos.getModel();
+        int row = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingrese la fila que deaseas cambiar!"));
+        int column = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingrese la columna que deaseas cambiar!"));
+        String data = JOptionPane.showInputDialog(null, "Ingrese el nuevo data");
+        modelo.setValueAt(data, row, column);
+        JTable_Articulos.setModel(modelo);
+    }//GEN-LAST:event_JB_ModificarArticuloActionPerformed
+
+    private void RM_ComboBox_ArticulosItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_RM_ComboBox_ArticulosItemStateChanged
+        // TODO add your handling code here:
+        if (evt.getStateChange() == 2) {
+            if (this.RM_ComboBox_Contactos.getSelectedItem() instanceof Articulos) {
+                Articulos article = (Articulos) this.RM_ComboBox_Contactos.getSelectedItem();
+                Object[] newrow = {
+                    article.getTitulo(),
+                    article.getDescripcion(),
+                    article.getEditorial(),
+                    article.getPuntuacion(),
+                    };
+                DefaultTableModel modelo
+                        = (DefaultTableModel) this.JTable_Person.getModel();
+                modelo.addRow(newrow);
+                this.JTable_Person.setModel(modelo);
+            }
+        }
+        
+    }//GEN-LAST:event_RM_ComboBox_ArticulosItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -1259,7 +1367,7 @@ public class Main extends javax.swing.JFrame {
     ArrayList<Person> contactos = new ArrayList();
     ArrayList<Mensaje> mensajes = new ArrayList();
     ArrayList<Articulos> articulos = new ArrayList();
-
+    HiloMensaje mj;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Button_Color;
@@ -1273,11 +1381,13 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField EM_Mensaje;
     private javax.swing.JTextField EM_Receptor;
     private javax.swing.ButtonGroup EstadoCivil;
+    private javax.swing.JButton JB_ModificarArticulo;
+    private javax.swing.JTable JTable_Articulos;
     private javax.swing.JTable JTable_Person;
     private javax.swing.JProgressBar Message_ProgressBar;
-    private javax.swing.JButton RM_Button_Modificar;
-    private javax.swing.JButton RM_Button_Remove;
-    private javax.swing.JButton RM_Button_Remove1;
+    private javax.swing.JButton RM_Button_ModificarPersona;
+    private javax.swing.JButton RM_Button_RemoveArticulo;
+    private javax.swing.JButton RM_Button_RemovePerson;
     private javax.swing.JComboBox<String> RM_ComboBox_Articulos;
     private javax.swing.JComboBox<String> RM_ComboBox_Contactos;
     private javax.swing.JRadioButton RadioB_Casado;
@@ -1338,7 +1448,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JLabel jl_hora;
     private javax.swing.JFormattedTextField label_Articulos_Calidad;
     private javax.swing.JTextField label_Articulos_CasaColaboracion;
     private javax.swing.JTextField label_Articulos_Descripcion;
