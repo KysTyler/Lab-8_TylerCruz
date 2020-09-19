@@ -9,22 +9,24 @@ public class HiloMensaje extends Thread {
     private JProgressBar bar;
     private boolean vive;
     private boolean avanzar;
-    private JTable table;
-    private String emisor;
-    private String receptor;
-    private String mesg;
+    JTable table;
+    String emisor;
+    String receptor;
+    String mesg;
+    private int size;
 
     public HiloMensaje() {
     }
 
-    public HiloMensaje(JProgressBar bar, JTable table, String emisor, String receptor, String mesg) {
+    public HiloMensaje(JProgressBar bar, JTable table, String emisor, String receptor, String mesg, int size) {
+        vive = true;
+        avanzar = true;
         this.bar = bar;
-        this.vive = true;
-        this.avanzar = avanzar;
         this.table = table;
         this.emisor = emisor;
         this.receptor = receptor;
         this.mesg = mesg;
+        this.size = size;
     }
 
     public JProgressBar getBar() {
@@ -59,29 +61,75 @@ public class HiloMensaje extends Thread {
         this.table = table;
     }
 
+    public String getEmisor() {
+        return emisor;
+    }
+
+    public void setEmisor(String emisor) {
+        this.emisor = emisor;
+    }
+
+    public String getReceptor() {
+        return receptor;
+    }
+
+    public void setReceptor(String receptor) {
+        this.receptor = receptor;
+    }
+
+    public String getMesg() {
+        return mesg;
+    }
+
+    public void setMesg(String mesg) {
+        this.mesg = mesg;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
     @Override
     public void run() {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         while (vive) {
             if (avanzar) {
+                bar.setMaximum(size);
+                System.out.println(size);
                 bar.setValue(bar.getValue() + 1);
-                if (bar.getValue() == 100000000) {
-                    vive = false;
+                if (bar.getValue() == size) {
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    bar.setValue(0);
                     Object[] newrow = {
                         emisor,
                         receptor,
-                        mesg,};
+                        mesg
+                    };
                     DefaultTableModel modelo
-                            = (DefaultTableModel) this.table.getModel();
+                            = (DefaultTableModel) table.getModel();
                     modelo.addRow(newrow);
                     table.setModel(modelo);
+                    vive = false;
                 }
             }
         }
+
         try {
-            Thread.sleep(0);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 }
-

@@ -23,10 +23,10 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         initComponents();
-        HiloHora h=new HiloHora(jl_hora);
+        HiloHora h = new HiloHora(jl_hora);
         Thread proceso1 = new Thread(h);
-        proceso1.start(); 
-         
+        proceso1.start();
+
     }
 
     /**
@@ -118,19 +118,6 @@ public class Main extends javax.swing.JFrame {
         jLabel37 = new javax.swing.JLabel();
         label_Person_Sueldo = new javax.swing.JTextField();
         Button_Color = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        Table_EmuladorMensaje = new javax.swing.JTable();
-        jLabel40 = new javax.swing.JLabel();
-        EM_Emisor = new javax.swing.JTextField();
-        jLabel41 = new javax.swing.JLabel();
-        EM_Receptor = new javax.swing.JTextField();
-        jLabel42 = new javax.swing.JLabel();
-        EM_Mensaje = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        Message_ProgressBar = new javax.swing.JProgressBar();
-        jl_hora = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -145,6 +132,20 @@ public class Main extends javax.swing.JFrame {
         RM_Button_ModificarPersona = new javax.swing.JButton();
         RM_Button_RemoveArticulo = new javax.swing.JButton();
         JB_ModificarArticulo = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        Table_EmuladorMensaje = new javax.swing.JTable();
+        jLabel40 = new javax.swing.JLabel();
+        EM_Emisor = new javax.swing.JTextField();
+        jLabel41 = new javax.swing.JLabel();
+        EM_Receptor = new javax.swing.JTextField();
+        jLabel42 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        Message_ProgressBar = new javax.swing.JProgressBar();
+        jl_hora = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        Text = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -660,98 +661,6 @@ public class Main extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Create", jPanel2);
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 576, Short.MAX_VALUE)
-        );
-
-        Table_EmuladorMensaje.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Receptor", "Emisor", "Mensaje"
-            }
-        ));
-        jScrollPane2.setViewportView(Table_EmuladorMensaje);
-
-        jLabel40.setText("Emisor: ");
-
-        jLabel41.setText("Receptor: ");
-
-        jLabel42.setText("Mensaje: ");
-
-        jButton1.setText("Enviar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(54, 54, 54)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(EM_Emisor, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(61, 61, 61)
-                                .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(EM_Receptor, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(58, 58, 58)
-                                .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jButton1))
-                        .addGap(44, 44, 44)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jl_hora, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(EM_Mensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 491, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(Message_ProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1139, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel40)
-                    .addComponent(EM_Emisor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel41)
-                    .addComponent(EM_Receptor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel42)
-                    .addComponent(EM_Mensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addComponent(jl_hora))
-                .addGap(18, 18, 18)
-                .addComponent(Message_ProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 209, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("Emulador Mensaje", jPanel4);
-
         JTable_Person.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -901,6 +810,108 @@ public class Main extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Remove and Modify", jPanel3);
 
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 576, Short.MAX_VALUE)
+        );
+
+        Table_EmuladorMensaje.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Receptor", "Emisor", "Mensaje"
+            }
+        ));
+        jScrollPane2.setViewportView(Table_EmuladorMensaje);
+
+        jLabel40.setText("Emisor: ");
+
+        jLabel41.setText("Receptor: ");
+
+        jLabel42.setText("Mensaje: ");
+
+        jButton1.setText("Enviar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        Text.setColumns(20);
+        Text.setRows(5);
+        jScrollPane4.setViewportView(Text);
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(54, 54, 54)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addGap(224, 224, 224))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(EM_Emisor, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(61, 61, 61)
+                                .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)))
+                        .addComponent(EM_Receptor, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34)
+                        .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 549, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(Message_ProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(22, 22, 22)
+                        .addComponent(jl_hora, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1139, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel40)
+                            .addComponent(EM_Emisor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel41)
+                            .addComponent(EM_Receptor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel42))
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton1))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Message_ProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jl_hora, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 227, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Emulador Mensaje", jPanel4);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -934,35 +945,22 @@ public class Main extends javax.swing.JFrame {
 
     private void RM_Button_RemoveArticuloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RM_Button_RemoveArticuloActionPerformed
         // TODO add your handling code here:
-        DefaultTableModel modelo
-                        = (DefaultTableModel) this.JTable_Person.getModel();
-        try {
-            if (this.JTable_Person.getSelectedRow() >= 0) {
-                this.JTable_Person.remove(this.JTable_Person.getSelectedRow());
-            }
-
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "No se puedo Hacer");
+              if (JTable_Articulos.getSelectedRow() >= 0) {
+            DefaultTableModel modelo = (DefaultTableModel) JTable_Articulos.getModel();
+            modelo.removeRow(JTable_Articulos.getSelectedRow());
+            JTable_Articulos.setModel(modelo);
         }
-        JTable_Person.setModel(modelo);
+        JOptionPane.showMessageDialog(null, "Articulo a sido removado exitosamente!");
     }//GEN-LAST:event_RM_Button_RemoveArticuloActionPerformed
 
     private void RM_Button_RemovePersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RM_Button_RemovePersonActionPerformed
         // TODO add your handling code here:
-        //if (this.RM_ComboBox_Contactos.getSelectedItem >= 0) {
-         DefaultTableModel modelo
-                        = (DefaultTableModel) this.JTable_Articulos.getModel();
-        try {
-            if (this.JTable_Articulos.getSelectedRow() >= 0) {
-                this.JTable_Articulos.remove(this.JTable_Articulos.getSelectedRow());
+            if (JTable_Person.getSelectedRow() >= 0) {
+            DefaultTableModel modelo = (DefaultTableModel) JTable_Person.getModel();
+            modelo.removeRow(JTable_Person.getSelectedRow());
+            JTable_Person.setModel(modelo);
             }
-
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "No se puedo Hacer");
-        }
-        JTable_Articulos.setModel(modelo);
-        //this.RM_ComboBox_Contactos.setModel(modelo);
-        //}
+            JOptionPane.showMessageDialog(null, "Persona a sido removado exitosamente!");
     }//GEN-LAST:event_RM_Button_RemovePersonActionPerformed
 
     private void RM_ComboBox_ContactosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RM_ComboBox_ContactosActionPerformed
@@ -1260,31 +1258,16 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-       String emisor  = this.EM_Emisor.getText(), receptor = this.EM_Receptor.getText(), msg = this.EM_Mensaje.getText();
-        String size  = EM_Mensaje.getText().toString();
-        int Actualsize  = size.length();
-        System.out.println(EM_Mensaje.getText().toString());
-        System.out.println("Size string: "  + Actualsize);
-        Message_ProgressBar.setMinimum(0);
-        Message_ProgressBar.setValue(0);
-        Message_ProgressBar.setMaximum(Actualsize);
-        mj =new HiloMensaje(Message_ProgressBar,Table_EmuladorMensaje,emisor,receptor,msg);
+        String emisor = this.EM_Emisor.getText(), receptor = this.EM_Receptor.getText(), msg = this.Text.getText();
+        String size = Text.getText().toString();
+        int Actualsize = size.length();
+        
+        mj = new HiloMensaje(Message_ProgressBar, Table_EmuladorMensaje, emisor, receptor, msg,Actualsize);
         mj.start();
-//        Mensaje x = new Mensaje(this.EM_Emisor.getText(), this.EM_Receptor.getText(), this.EM_Mensaje.getText());
-//        this.EM_Emisor.setText("");
-//        this.EM_Receptor.setText("");
-//        this.EM_Mensaje.setText("");
-//        if (rootPaneCheckingEnabled) {
-//        mensajes.add(x);
-//        Object[] newrow = {
-//            x.getEmisor(),
-//            x.getReceptor(),
-//            x.getContenido(),};
-//        DefaultTableModel modelo
-//                = (DefaultTableModel) this.Table_EmuladorMensaje.getModel();
-//        modelo.addRow(newrow);
-//        this.Table_EmuladorMensaje.setModel(modelo);
-//        }
+        Table_EmuladorMensaje = mj.getTable();
+        EM_Emisor.setText("");
+        EM_Receptor.setText("");
+        Text.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void RM_Button_ModificarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RM_Button_ModificarPersonaActionPerformed
@@ -1296,37 +1279,36 @@ public class Main extends javax.swing.JFrame {
         String data = JOptionPane.showInputDialog(null, "Ingrese el nuevo data");
         modelo.setValueAt(data, row, column);
         JTable_Person.setModel(modelo);
+        JOptionPane.showMessageDialog(null, "Persona a sido modificado exitosamente!");
     }//GEN-LAST:event_RM_Button_ModificarPersonaActionPerformed
 
     private void JB_ModificarArticuloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_ModificarArticuloActionPerformed
         // TODO add your handling code here:
-         DefaultTableModel modelo
+        DefaultTableModel modelo
                 = (DefaultTableModel) this.JTable_Articulos.getModel();
         int row = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingrese la fila que deaseas cambiar!"));
         int column = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingrese la columna que deaseas cambiar!"));
         String data = JOptionPane.showInputDialog(null, "Ingrese el nuevo data");
         modelo.setValueAt(data, row, column);
         JTable_Articulos.setModel(modelo);
+        JOptionPane.showMessageDialog(null, "Articulo a sido modificado exitosamente!");
     }//GEN-LAST:event_JB_ModificarArticuloActionPerformed
 
     private void RM_ComboBox_ArticulosItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_RM_ComboBox_ArticulosItemStateChanged
         // TODO add your handling code here:
         if (evt.getStateChange() == 2) {
-            if (this.RM_ComboBox_Contactos.getSelectedItem() instanceof Articulos) {
-                Articulos article = (Articulos) this.RM_ComboBox_Contactos.getSelectedItem();
-                Object[] newrow = {
-                    article.getTitulo(),
-                    article.getDescripcion(),
-                    article.getEditorial(),
-                    article.getPuntuacion(),
-                    };
-                DefaultTableModel modelo
-                        = (DefaultTableModel) this.JTable_Person.getModel();
-                modelo.addRow(newrow);
-                this.JTable_Person.setModel(modelo);
-            }
+            Articulos article = (Articulos) this.RM_ComboBox_Articulos.getSelectedItem();
+            Object[] newrow = {
+                article.getTitulo(),
+                article.getDescripcion(),
+                article.getEditorial(),
+                article.getPuntuacion(),};
+            DefaultTableModel modelo
+                    = (DefaultTableModel) this.JTable_Articulos.getModel();
+            modelo.addRow(newrow);
+            this.JTable_Articulos.setModel(modelo);
         }
-        
+
     }//GEN-LAST:event_RM_ComboBox_ArticulosItemStateChanged
 
     /**
@@ -1378,7 +1360,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton Button_CrearPersonal;
     private javax.swing.JComboBox<String> ComboBox_Contactos;
     private javax.swing.JTextField EM_Emisor;
-    private javax.swing.JTextField EM_Mensaje;
     private javax.swing.JTextField EM_Receptor;
     private javax.swing.ButtonGroup EstadoCivil;
     private javax.swing.JButton JB_ModificarArticulo;
@@ -1397,6 +1378,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JRadioButton RadioB_Soltero;
     private javax.swing.ButtonGroup Sex;
     private javax.swing.JTable Table_EmuladorMensaje;
+    private javax.swing.JTextArea Text;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1449,6 +1431,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel jl_hora;
     private javax.swing.JFormattedTextField label_Articulos_Calidad;
