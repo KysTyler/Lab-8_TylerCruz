@@ -1,5 +1,6 @@
 package examen1_tylercruz_progra2;
 
+import javax.swing.JOptionPane;
 import javax.swing.JProgressBar;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -121,6 +122,7 @@ public class HiloMensaje extends Thread {
                             = (DefaultTableModel) table.getModel();
                     modelo.addRow(newrow);
                     table.setModel(modelo);
+                    JOptionPane.showMessageDialog(null ,"Mensaje enviado exitosamente!");
                     vive = false;
                 }
             }

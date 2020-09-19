@@ -1261,7 +1261,6 @@ public class Main extends javax.swing.JFrame {
         String emisor = this.EM_Emisor.getText(), receptor = this.EM_Receptor.getText(), msg = this.Text.getText();
         String size = Text.getText().toString();
         int Actualsize = size.length();
-        
         mj = new HiloMensaje(Message_ProgressBar, Table_EmuladorMensaje, emisor, receptor, msg,Actualsize);
         mj.start();
         Table_EmuladorMensaje = mj.getTable();
